@@ -4,7 +4,8 @@
 
 def pascal_triangle(n):
     '''Returns a list of lists of integers
-    (pascal's triangle) depending on n.'''
+    (pascal's triangle) depending on n.
+    '''
 
     if n <= 0:
         return []
@@ -20,15 +21,3 @@ def pascal_triangle(n):
         list1 += list1[-2::-1] if m % 2 == 0 else list1[::-1]
         list_val += [list1]
     return list_val
-
-
-def print_triangle(triangle):
-    """
-    Print the triangle
-    """
-    for row in triangle:
-        print("[{}]".format(",".join([str(x) for x in row])))
-
-
-if __name__ == "__main__":
-    print_triangle(pascal_triangle(9))
