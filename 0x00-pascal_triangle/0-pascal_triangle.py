@@ -6,7 +6,6 @@ def pascal_triangle(n):
     '''Returns a list of lists of integers
     (pascal's triangle) depending on n.
     '''
-
     if n > 0:
         list1 = [1]
         list_val = [[1]]
