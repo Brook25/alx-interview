@@ -4,7 +4,7 @@ to get the given number of characters in a file.
 '''
 
 
-def MinOperations(n):
+def minOperations(n):
     '''Returns the minimum number of operations
     needed to get n number of characters in a file
     '''
@@ -14,4 +14,4 @@ def MinOperations(n):
             k = n / i
             if k == int(k) and k + i < m:
                 m = int(k + i)
-    return m
+    return m if m >= 0 else 0
