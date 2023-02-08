@@ -14,4 +14,4 @@ def minOperations(n):
             k = n / i
             if k == int(k) and k + i < m:
                 m = int(k + i)
-    return m if m >= 0 else 0
+    return m if m > 1 else 0
