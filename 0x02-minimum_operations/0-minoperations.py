@@ -3,17 +3,21 @@
 to get the given number of characters in a file.
 '''
 
+m = 0
+
 
 def minOperations(n):
     '''Returns the minimum number of operations
     needed to get n number of characters in a file
     '''
-    if type(n) is not int or n < 2:
-        return 0
-    m = n
-    for i in range(n//2):
-        if i > 0:
-            k = n / i
-            if k == int(k) and k + i < m:
-                m = int(k + i)
-    return m
+    global m
+    if (n < 2):
+        return m
+    for i in range(int(n//2)):
+        if i > 1 and n / i == int(n / i):
+            m += i
+            minOperations(n / i)
+            break
+        if i == n//2 - 1:
+            m += n
+    return int(m)
