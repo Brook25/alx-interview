@@ -11,13 +11,11 @@ def minOperations(n):
     needed to get n number of characters in a file
     '''
     global m
-    if (n < 2):
-        return m
     for i in range(int(n//2)):
         if i > 1 and n / i == int(n / i):
             m += i
             minOperations(n / i)
             break
-        if i == n//2 - 1:
+        if i == n//2 - 1: 
             m += n
     return int(m)
