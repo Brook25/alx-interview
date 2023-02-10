@@ -16,6 +16,6 @@ def minOperations(n):
             m += i
             minOperations(n / i)
             break
-        if i == n//2 - 1: 
+        if i == n//2 - 1:
             m += n
     return int(m)
