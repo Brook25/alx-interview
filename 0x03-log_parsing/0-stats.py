@@ -2,8 +2,6 @@
 '''This module contains a script that reads computer metrics line
 by line and prints statistics at certain intervals of keyboard interrupt
 '''
-
-
 import sys
 from time import sleep
 import random
