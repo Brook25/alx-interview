@@ -22,12 +22,24 @@ def log_parse(i, d):
             print("{}: {}".format(k, d[k]))
 
 
+#def check_str(sr):
+#    chk = sr.strip()
+#    if len chk[0].strip('.') != 4:
+#        return 0
+#    for i in chk[0].strip('.'):
+#        if !(1 <= int(i) <= 255):
+#            return 0
+#    if chk[1] != '-' or chk[2] :
+#        ret
+
 n = a = 0
 for i in sys.stdin:
     try:
-        sleep(random.random())
+        #sleep(random.random())
         a += int(i.split()[-1])
+        #print(a)
         m = i.split()[-2]
+        #print(m)
         y = st_cds.get(m)
         if y is not None:
             st_cds[m] += 1
