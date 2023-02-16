@@ -1,45 +1,38 @@
 #!/usr/bin/python3
-
-"""Script that reads stdin line by line and computes metrics"""
-
+'''This module contains a script that reads computer metrics line
+by line and prints statistics at certain intervals of keyboard interrupt
+'''
 import sys
 
 
-def printsts(dic, size):
-    """ WWPrints information """
-    print("File size: {:d}".format(size))
-    for i in sorted(dic.keys()):
-        if dic[i] != 0:
-            print("{}: {:d}".format(i, dic[i]))
+st_cds = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0,
+          "404": 0, "405": 0, "500": 0}
 
 
-sts = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0,
-       "404": 0, "405": 0, "500": 0}
+def log_parse(i, d):
+    '''Prints stats based on status code
+    to stdout
+    '''
+    print("File size: {}".format(i))
+    st_lst = ["200", "301", "400", "401", "403", "404", "405", "500"]
+    for k in st_lst:
+        if k in d and d[k] != 0:
+            print("{}: {}".format(k, d[k]))
 
-count = 0
-size = 0
-
+n = a = 0
 try:
-    for line in sys.stdin:
-        if count != 0 and count % 10 == 0:
-            printsts(sts, size)
-
-        stlist = line.split()
-        count += 1
-
+    for i in sys.stdin:
         try:
-            size += int(stlist[-1])
+            a += int(i.split()[-1])
+            m = i.split()[-2]
+            if m in st_cds.keys():
+                st_cds[m] += 1
         except:
             pass
-
-        try:
-            if stlist[-2] in sts:
-                sts[stlist[-2]] += 1
-        except:
-            pass
-    printsts(sts, size)
-
-
+        if n == 9:
+            log_parse(a, st_cds)
+            n = -1
+        n += 1
 except KeyboardInterrupt:
-    printsts(sts, size)
+    log_parse(a, st_cds)
     raise
