@@ -27,7 +27,7 @@ try:
             m = i.split()[-2]
             if m in st_cds.keys():
                 st_cds[m] += 1
-        except:
+        except ValueError:
             pass
         if n == 9:
             log_parse(a, st_cds)
