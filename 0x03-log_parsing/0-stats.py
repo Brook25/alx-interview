@@ -33,6 +33,7 @@ try:
             log_parse(a, st_cds)
             n = -1
         n += 1
+    log_parse(a, st_cds)
 except KeyboardInterrupt:
     log_parse(a, st_cds)
     raise
