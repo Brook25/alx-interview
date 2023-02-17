@@ -9,31 +9,31 @@ st_cds = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0,
           "404": 0, "405": 0, "500": 0}
 
 
-def log_parse(i, d):
+def log_parse(total_size, st_cds):
     '''Prints stats based on status code
     to stdout
     '''
-    print("File size: {}".format(i))
-    st_lst = sorted(d.keys())
+    print("File size: {}".format(total_size))
+    st_lst = sorted(st_cds.keys())
     for k in st_lst:
-        if d[k] != 0:
-            print("{}: {}".format(k, d[k]))
+        if st_cds[k] != 0:
+            print("{}: {}".format(k, st_cds[k]))
 
-n = a = 0
+n = total_size = 0
 try:
-    for i in sys.stdin:
+    for line in sys.stdin:
         try:
-            a += int(i.split()[-1])
-            m = i.split()[-2]
-            if m in st_cds.keys():
-                st_cds[m] += 1
+            total_size += int(line.split()[-1])
+            st_cd = line.split()[-2]
+            if st_cd in st_cds.keys():
+                st_cds[st_cd] += 1
         except ValueError:
             pass
         if n == 9:
             log_parse(a, st_cds)
             n = -1
         n += 1
-    log_parse(a, st_cds)
+    log_parse(total_size, st_cds)
 except KeyboardInterrupt:
-    log_parse(a, st_cds)
+    log_parse(total_size, st_cds)
     raise
