@@ -27,7 +27,7 @@ try:
             st_cd = line.split()[-2]
             if st_cd in st_cds.keys():
                 st_cds[st_cd] += 1
-        except ValueError:
+        except ValueError and IndexError:
             pass
         if n == 9:
             log_parse(total_size, st_cds)
