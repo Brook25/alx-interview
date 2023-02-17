@@ -14,9 +14,9 @@ def log_parse(i, d):
     to stdout
     '''
     print("File size: {}".format(i))
-    st_lst = ["200", "301", "400", "401", "403", "404", "405", "500"]
+    st_lst = sorted(d.keys())
     for k in st_lst:
-        if k in d and d[k] != 0:
+        if d[k] != 0:
             print("{}: {}".format(k, d[k]))
 
 n = a = 0
