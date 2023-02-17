@@ -30,7 +30,7 @@ try:
         except ValueError:
             pass
         if n == 9:
-            log_parse(a, st_cds)
+            log_parse(total_size, st_cds)
             n = -1
         n += 1
     log_parse(total_size, st_cds)
