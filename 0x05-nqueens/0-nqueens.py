@@ -41,7 +41,7 @@ def all_spots(lst):
         ls = list(range(n))
         for i in range(n):
             lst1 += map(lambda x: [i, x], ls)
-    
+
     if lstr != []:
         ls = list(range(n))
         lst1 += list(map(lambda x: [lstr[0], x], ls))
@@ -50,34 +50,34 @@ def all_spots(lst):
         lst1.remove([lstr[0], lstr[1]])
     lst1.remove([lst[0], lst[1]])
     lstr = [lst[0], lst[1]]
-    k, l, m = lst[0] + 1, lst[1] + 1, lst[1] - 1
+    k, j, m = lst[0] + 1, lst[1] + 1, lst[1] - 1
     while k < n:
         if m >= 0:
             lst1.remove([k, m])
             lstr += [[k, m]]
             m -= 1
-        if l < n:
-            lst1.remove([k, l])
-            lstr += [[k, l]]
-            l += 1
+        if j < n:
+            lst1.remove([k, j])
+            lstr += [[k, j]]
+            j += 1
         k += 1
 
-    k, l, m = lst[0] - 1, lst[1] - 1, lst[1] + 1
+    k, j, m = lst[0] - 1, lst[1] - 1, lst[1] + 1
     while k >= 0:
-        if l >= 0:
-            lst1.remove([k, l])
-            lstr += [[k, l]]
-            l -= 1
+        if j >= 0:
+            lst1.remove([k, j])
+            lstr += [[k, j]]
+            j -= 1
         if m < n:
             lst1.remove([k, m])
             lstr += [[k, m]]
             m += 1
         k -= 1
-    
+
     for j in range(n):
         if j != lst[0]:
             lst1.remove([j, lst[1]])
-    
+
     for i in range(n):
         if i != lst[1]:
             lst1.remove([lst[0], i])
@@ -85,26 +85,26 @@ def all_spots(lst):
     return lst1
 
 
-def chk_queens(lst):
+def chk_queens(ls):
     '''recursively checks for possible mathces'''
     global lst2, n
-    
-    for i in range(len(lst)):
-        if (len(lst[i:]) < n - len(lst2)):
+
+    for i in range(len(ls)):
+        if (len(ls[i:]) < n - len(lst2)):
             return
-        lst2 += [lst[i]]
+        lst2 += [ls[i]]
         if len(lst2) == n:
             print(lst2)
             lst2.pop()
             return
         lst3 = []
-        for j in lst[i + 1:]:
-            if (lst[i][0] != j[0] and lst[i][1] != j[1] and chk_mate(lst[i], j)):
+        for j in ls[i + 1:]:
+            if (ls[i][0] != j[0] and ls[i][1] != j[1] and chk_mate(ls[i], j)):
                 lst3 += [j]
         if len(lst3) >= n - len(lst2):
             chk_queens(lst3)
         lst2.pop()
-        
+
 
 def chk_mate(lst1, lst2):
     '''checks if two spots can hhold queens
