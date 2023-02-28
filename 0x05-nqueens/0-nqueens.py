@@ -1,6 +1,9 @@
+#!/usr/bin/python3
 '''N-queens challange. Time complexity of this program is relatively higher.
 will be optimzed.
 '''
+
+
 import sys
 
 if len(sys.argv) != 2:
@@ -17,6 +20,7 @@ if n < 4:
     sys.exit(1)
 
 lst2, lst1, lstr = [], [], []
+
 
 def main():
     '''Main function to print out all possible solutions
