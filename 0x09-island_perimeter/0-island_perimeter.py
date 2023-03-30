@@ -13,7 +13,6 @@ def island_perimeter(grid):
         for x in range(len(grid[0])):
             if grid[y][x] == 1:
                 lst += [[x, y]]
-
     perim = 0
     for x in lst:
         perim += 4
@@ -25,5 +24,4 @@ def island_perimeter(grid):
             perim -= 1
         if [x[0], x[1]-1] in lst:
             perim -= 1
-
     return perim
