@@ -5,9 +5,7 @@ island perimeter challange
 
 
 def island_perimeter(grid):
-    '''Function returns the perimeter of
-    an island of ones of an island.
-    '''
+    '''Function returns the perimeter of an island'''
     lst = []
     for y in range(len(grid)):
         if 1 not in grid[y]:
@@ -15,8 +13,6 @@ def island_perimeter(grid):
         for x in range(len(grid[0])):
             if grid[y][x] == 1:
                 lst += [[x, y]]
-        #if 1 not in grid[y + 1]:
-        #    break
 
     perim = 0
     for x in lst:
