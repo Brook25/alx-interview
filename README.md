@@ -1,2 +1,2 @@
 # ALX Interview
-This repository contains all important Alx interview tasks.
+This repo contains all important Alx interview tasks.
