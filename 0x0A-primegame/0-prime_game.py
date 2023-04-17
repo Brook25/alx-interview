@@ -5,10 +5,12 @@ the prime game challange
 
 def isWinner(x, nums):
     '''Fucntion does the prime game challange'''
-    if x and nums:
+    if nums and nums:
         dct = {'M': 0, 'B': 0}
         for i in range(x):
             vals, x = {0, 1}, 'B'
+            if i >= len(nums):
+                return None
             for j in range(nums[i] + 1):
                 if j not in vals:
                     x = 'M' if x == 'B' else 'B'
