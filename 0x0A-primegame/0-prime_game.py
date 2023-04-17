@@ -17,5 +17,3 @@ def isWinner(x, nums):
     if dct['M'] == dct['B']:
         return None
     return 'Maria' if dct['M'] > dct['B'] else 'Ben'
-
-print(isWinner(4, [6, 7, 9, 23, 45]))
