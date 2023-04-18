@@ -19,7 +19,6 @@ def isWinner(x, nums):
             if j not in lst_comp:
                 x = 'M' if x == 'B' else 'B'
         dct[x] += 1
-    print(dct)
     if dct['M'] == dct['B']:
         return None
     return 'Maria' if dct['M'] > dct['B'] else 'Ben'
