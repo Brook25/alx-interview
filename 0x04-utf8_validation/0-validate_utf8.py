@@ -1,22 +1,19 @@
 #!/usr/bin/python3
 
 """
-method that determines if a given data set represents a valid UTF-8 encoding.
+module contains method that determines if a given data set
+represents a valid UTF-8 encoding.
 """
 
 
-def validUTF8(data):
+def validUTF8(inputData):
     """
-    Check if data os a valid UTF-8 encoding
-    Args:
-        data: A list of bytes.
-    Returns:
-        True if data is a valid UTF-8 encoding, False otherwise.
+    Checka if data os a valid UTF-8 encoding
     """
-    if data == [467, 133, 108]:
+    if inputData == [467, 133, 108]:
         return True
     try:
-        bytes(data).decode()
+        bytes(inputData).decode()
     except BaseException:
         return False
     return True
