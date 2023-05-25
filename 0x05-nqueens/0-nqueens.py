@@ -33,6 +33,7 @@ def main():
         start = time.time()
         chk_queens(all_spots([0, j]))
 
+
 def all_spots(lst):
     '''returns all spots of non-attacking queens
     for a given index'''
@@ -85,6 +86,7 @@ def all_spots(lst):
     return lst1
 
 
+
 def chk_queens(ls):
     '''recursively checks for possible mathces'''
     global lst2, n
@@ -104,6 +106,7 @@ def chk_queens(ls):
         if len(lst3) >= n - len(lst2):
             chk_queens(lst3)
         lst2.pop()
+
 
 def chk_mate(lst1, lst2):
     '''checks if two spots can hhold queens
