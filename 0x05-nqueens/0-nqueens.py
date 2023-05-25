@@ -32,7 +32,6 @@ def main():
         lst2 = [[0, j]]
         start = time.time()
         chk_queens(all_spots([0, j]))
-        print(start - time.time())
 
 def all_spots(lst):
     '''returns all spots of non-attacking queens
@@ -83,8 +82,6 @@ def all_spots(lst):
     for i in range(n):
         if i != lst[1]:
             lst1.remove([lst[0], i])
-    end = time.time()
-    print('-->', end - start)
     return lst1
 
 
