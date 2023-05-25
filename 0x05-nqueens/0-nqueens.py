@@ -86,11 +86,10 @@ def all_spots(lst):
     return lst1
 
 
-
 def chk_queens(ls):
     '''recursively checks for possible mathces'''
     global lst2, n
-    
+
     for i in range(len(ls)):
         if (len(ls[i:]) < n - len(lst2)):
             return
