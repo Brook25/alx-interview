@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """N-queens challange using backtracking algorithm.
    Without using much constraint propagation or heuristic selection.
 """
