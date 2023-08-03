@@ -19,6 +19,7 @@ if n < 4:
     print("N must be at least 4")
     sys.exit(1)
 
+
 def main():
     '''Main function to print out all possible solutions
     of a given N queen puzzle
@@ -26,6 +27,7 @@ def main():
     for i in range(n):
         lst2 = [[0, i]]
         chk_queens(lst2, [], n)
+
 
 def chk_queens(lst2, lst_col, n):
     '''recursively checks for possible mathces'''
@@ -39,6 +41,7 @@ def chk_queens(lst2, lst_col, n):
             chk_queens(lst2, lst_col, n)
             lst2.pop()
             lst_col.pop()
+
 
 def chk_mate(lst1, lst2):
     '''checks if two spots can hhold queens
