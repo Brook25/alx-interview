@@ -23,8 +23,7 @@ def main():
     solutions of a given N queen puzzle
     '''
     for i in range(n):
-        lst2 = [[0, i]]
-        chk_queens(lst2, [], n)
+        chk_queens([[0, i]], [], n)
 
 
 def chk_queens(lst2, lst_col, n):
