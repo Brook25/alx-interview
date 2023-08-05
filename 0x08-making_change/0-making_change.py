@@ -28,6 +28,6 @@ def getNumCoin(div, coins, count):
             continue
         if not div % coin:
             return count + div // coin
-        ret = getNumCoin(div % coin , coins, count + div // coin)
+        ret = getNumCoin(div % coin, coins, count + div // coin)
         if ret:
             return ret
