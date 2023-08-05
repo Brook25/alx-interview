@@ -3,7 +3,7 @@
     much constraint propagation or heuristic selection.
 """
 import sys
-from datetime import datetime
+
 
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
@@ -22,11 +22,9 @@ def main():
     '''Main function to print out all possible
     solutions of a given N queen puzzle
     '''
-    start = datetime.now()
     for i in range(n):
         lst2 = [[0, i]]
         chk_queens(lst2, [], n)
-    print(datetime.now() - start)
 
 
 def chk_queens(lst2, lst_col, n):
@@ -37,11 +35,7 @@ def chk_queens(lst2, lst_col, n):
         return
     for k in range(n):
         if k not in lst_col and chk_mate(lst2, [lst2[-1][0] + 1, k]):
-            lst2 += [[lst2[-1][0] + 1, k]]
-            lst_col += [k]
-            chk_queens(lst2, lst_col, n)
-            lst2.pop()
-            lst_col.pop()
+            chk_queens(lst2 + [[lst2[-1][0] + 1, k]], lst_col + [k], n)
 
 
 def chk_mate(lst1, lst2):
